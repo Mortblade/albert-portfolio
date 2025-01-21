@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albert Aschabov | Web Developer</title>
+    <!-- Google Fonts - Realistic choice from FreeCodeCamp learning -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            background: #f0f2f5;
+            color: #333;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: #2c3e50;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-list {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-list a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-list a:hover {
+            color: #3498db;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)),
+                        url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97') center/cover;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 1rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .languages-text {
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            color: #3498db;
+            font-weight: 500;
+        }
+
+        /* Sections */
+        .section {
+            padding: 4rem 1rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+        }
+
+        /* About */
+        .about-grid {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .about-grid:hover {
+            transform: translateY(-5px);
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .about-intro {
+            font-size: 1.1rem;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .about-journey, .about-goal, .about-personal {
+            color: #34495e;
+            line-height: 1.8;
+        }
+
+        .about-content p {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Skills */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .skill-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: #e9ecef;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            margin: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        /* Contact */
+        .contact-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #3498db;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-list {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Albert Aschabov</h1>
+            <p>Junior Web Developer | FreeCodeCamp Student</p>
+            <p class="languages-text">Fluent in English & Dutch</p>
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-grid">
+            <div class="about-content">
+                <p class="about-intro">Hello! I'm Albert, a passionate self-taught web developer based in Belgium. My journey into web development began when I discovered FreeCodeCamp, and it quickly evolved from curiosity into a genuine passion.</p>
+
+                <p class="about-journey">Despite not following a traditional college path, I've found my true calling in coding. The logical problem-solving nature of programming combined with the creative aspects of web development perfectly aligns with how I think and work. Through self-study and hands-on practice, I'm building a strong foundation in front-end development.</p>
+
+                <p class="about-goal">My goal is to transition into a professional development role where I can contribute to meaningful projects while continuing to grow my skills. I'm particularly drawn to front-end development, where I can combine technical skills with creative problem-solving to build user-friendly websites.</p>
+
+                <p class="about-personal">Being fluent in both English and Dutch allows me to effectively communicate and collaborate in diverse team environments. I bring a strong work ethic, enthusiasm for learning, and a genuine passion for creating clean, efficient code.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="skills">
+        <h2 class="section-title">Skills & Technologies</h2>
+        <div class="skills-container">
+            <div class="skill-card">
+                <h3>Web Development</h3>
+                <span class="skill-tag">HTML5</span>
+                <span class="skill-tag">CSS3</span>
+                <span class="skill-tag">Basic JavaScript</span>
+                <span class="skill-tag">Responsive Design</span>
+            </div>
+            <div class="skill-card">
+                <h3>Languages</h3>
+                <span class="skill-tag">English (Native)</span>
+                <span class="skill-tag">Dutch (Fluent)</span>
+            </div>
+            <div class="skill-card">
+                <h3>Learning</h3>
+                <span class="skill-tag">FreeCodeCamp Curriculum</span>
+                <span class="skill-tag">Web Development</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="projects">
+        <h2 class="section-title">Learning Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Portfolio Website</h3>
+                    <p>My first responsive website built with HTML and CSS, showcasing my journey in web development.</p>
+                    <div class="skill-tag">HTML</div>
+                    <div class="skill-tag">CSS</div>
+                    <div class="skill-tag">Responsive Design</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-container">
+            <p>I'm currently looking for entry-level web development opportunities.</p>
+            <p>Email: <a href="mailto:albert1998@live.be">albert1998@live.be</a></p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/albert-aschabov-84092b281/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 2rem; background: #2c3e50; color: white;">
+        <p>© 2024 Albert Aschabov</p>
+    </footer>
+</body>
+</html>
